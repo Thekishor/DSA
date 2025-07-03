@@ -2,6 +2,8 @@ package Trees.Binary;
 
 public class BinaryT {
 
+  Node root;
+
   static class Node {
     int data;
     Node left;
@@ -39,10 +41,39 @@ public class BinaryT {
     preOrder(root.right);
   }
 
+  public static void inOrder(Node root) {
+    if (root == null) {
+      return;
+    }
+    inOrder(root.left);
+    System.out.print(root.data + " ");
+    inOrder(root.right);
+  }
+
+  public static void postOrder(Node root) {
+    if (root == null) {
+      return;
+    }
+    inOrder(root.left);
+    inOrder(root.right);
+    System.out.print(root.data + " ");
+  }
+
   public static void main(String[] args) {
     int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
     Node root = BinaryTree.buildTree(nodes);
     // System.out.println(root.data);
+    System.out.println("PreOrder Data");
     preOrder(root);
+
+    System.out.println();
+
+    System.out.println("InOrder Data");
+    inOrder(root);
+
+    System.out.println();
+
+    System.out.println("PostOrder Data");
+    postOrder(root);
   }
 }

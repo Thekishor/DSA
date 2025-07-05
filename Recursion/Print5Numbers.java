@@ -16,5 +16,6 @@ public class Print5Numbers {
     }
     System.out.println(number);
     print(number + 1);
+    System.out.println(number);
   }
 }

@@ -16,6 +16,5 @@ public class SumNaturalNumber {
 
     sum += i;
     sumNum(i + 1, n, sum);
-    System.out.println(i);
   }
 }
